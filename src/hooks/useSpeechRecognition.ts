@@ -43,7 +43,7 @@ export function useSpeechRecognition() {
       setError(null);
     };
 
-    recognition.onresult = (event: SpeechRecognitionEvent) => {
+    recognition.onresult = (event: any) => {
       let interim = "";
       const newFinalSegments: TranscriptSegment[] = [];
 

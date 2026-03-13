@@ -17,7 +17,7 @@ export function useSpeechRecognition() {
   const [currentWordIndex, setCurrentWordIndex] = useState(-1);
   const [interimText, setInterimText] = useState("");
   const [error, setError] = useState<string | null>(null);
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const recognitionRef = useRef<any>(null);
   const segmentIndexRef = useRef(0);
 
   const isSupported =

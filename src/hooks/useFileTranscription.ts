@@ -31,9 +31,8 @@ export function useFileTranscription() {
       });
 
       const duration = audio.duration;
-      const SpeechRecognition =
-        window.SpeechRecognition || window.webkitSpeechRecognition;
-      const recognition = new SpeechRecognition();
+      const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      const recognition = new SR();
       recognition.continuous = true;
       recognition.interimResults = true;
       recognition.lang = "ko-KR";

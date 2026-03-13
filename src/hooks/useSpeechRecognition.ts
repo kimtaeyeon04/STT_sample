@@ -30,9 +30,8 @@ export function useSpeechRecognition() {
       return;
     }
 
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
+    const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    const recognition = new SR();
 
     recognition.continuous = true;
     recognition.interimResults = true;

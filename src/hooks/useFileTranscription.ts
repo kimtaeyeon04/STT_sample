@@ -60,9 +60,9 @@ export function useFileTranscription() {
         }
       };
 
-      recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
+      recognition.onerror = (event: any) => {
         if (event.error !== "aborted") {
-          reject(new Error(`음성 인식 오류: ${event.error}`));
+          // error handled in done promise
         }
       };
 

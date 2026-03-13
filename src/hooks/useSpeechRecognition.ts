@@ -77,7 +77,7 @@ export function useSpeechRecognition() {
       }
     };
 
-    recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
+    recognition.onerror = (event: any) => {
       if (event.error === "not-allowed") {
         setError("마이크 접근이 거부되었습니다. 브라우저 설정에서 마이크를 허용해주세요.");
       } else if (event.error !== "aborted") {

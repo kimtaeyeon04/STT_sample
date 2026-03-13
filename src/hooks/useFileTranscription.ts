@@ -67,7 +67,7 @@ export function useFileTranscription() {
       };
 
       const done = new Promise<void>((resolve, reject) => {
-        recognition.onerror = (e: SpeechRecognitionErrorEvent) => {
+        recognition.onerror = (e: any) => {
           if (e.error !== "aborted" && e.error !== "no-speech") {
             reject(new Error(`음성 인식 오류: ${e.error}`));
           }

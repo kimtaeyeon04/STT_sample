@@ -40,7 +40,7 @@ export function useFileTranscription() {
       const collectedSegments: TranscriptSegment[] = [];
       let segIndex = 0;
 
-      recognition.onresult = (event: SpeechRecognitionEvent) => {
+      recognition.onresult = (event: any) => {
         for (let i = segIndex; i < event.results.length; i++) {
           const result = event.results[i];
           if (result.isFinal) {

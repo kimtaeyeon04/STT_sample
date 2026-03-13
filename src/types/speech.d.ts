@@ -1,13 +1,8 @@
-interface SpeechRecognitionWindow extends Window {
-  SpeechRecognition?: typeof SpeechRecognition;
-  webkitSpeechRecognition?: typeof SpeechRecognition;
-}
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare global {
   interface Window {
-    SpeechRecognition?: new () => SpeechRecognition;
-    webkitSpeechRecognition?: new () => SpeechRecognition;
+    SpeechRecognition: any;
+    webkitSpeechRecognition: any;
   }
 }
-
 export {};

@@ -16,7 +16,7 @@ export function useFileTranscription() {
     try {
       // Use Web Speech API with audio element for file transcription
       const isSupported =
-        "SpeechRecognition" in window || "webkitSpeechRecognition" in window;
+        "SpeechRecognition" in window || "webkitSpeechRecognition" in (window as any);
 
       if (!isSupported) {
         throw new Error("이 브라우저는 음성 인식을 지원하지 않습니다.");
